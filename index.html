@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>Q1. Write the code to access element which is having id as "text"</p>
+    Ans.<div id="text">Hi, PrepBytes</div>
+<pre>
+    let c=document.getElementById("text");
+console.log(c.innerText);
+</pre>
+
+     <p>Q2. Write the code to access element which is having tag as "h1"</p>
+     Ans. <h1>Hello !!!</h1>
+    <pre>
+        let a=document.getElementsByTagName("h1");
+  console.log(a[0].innerText)
+    </pre>
+    
+    <p>Q3. Write the code to access element which is having class as "box"</p>
+    Ans.  <h3 class="box">Hello!!</h3>
+    <pre>
+        let b=document.getElementsByClassName("box")
+console.log(b[0].innerText)
+    </pre>
+
+    <p>Q4. 
+     
+
+Change the heading from ""Hello"" to ""Hello World"" using DOM functions
+    </p>Ans.
+    <h2 id="h2">hello</h2>
+    <pre>
+        
+let question4=document.getElementById("h2");
+question4.innerText="Hello World !!!"
+
+    </pre>
+    
+<p>Q5. Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</p>
+    <div id="container">
+        <div class="flexbox"></div>
+        <div class="flexbox"></div>
+        <div class="flexbox"></div>
+    </div>
+    <button id="ChangeFlexDirection">ChangeFlexDirection</button>
+    <pre>
+        
+let flexcontaier=document.getElementById("container");
+let flexdirectionbtn=document.getElementById("ChangeFlexDirection");
+
+flexdirectionbtn.addEventListener("click",function(){
+  flexcontaier.style.flexDirection="column";
+})
+    </pre>
+
+    <p>Q6. 
+
+        Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions"</p>Ans
+        <h1 id="Heading">Hello PrepBytes !!!!!</h1>
+        <pre>
+            let changecolor=document.getElementById("Heading");
+changecolor.style.color="red"
+        </pre>
+
+        <p>Q7. Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</p>
+        <h2 id="changetext">Hello Everyone !!</h2>
+        <button id="replace">Replace Text</button>
+        <pre>
+            let changeText=document.getElementById("changetext");
+let replaceBtn=document.getElementById("replace");
+replaceBtn.addEventListener("click",function(){
+  changeText.innerText="Welcome to Elevation Academy";
+  changeText.style.color="blue";
+  
+})
+        </pre>
+
+    <p>Q9. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</p>
+    <div id="clock">
+    </div>
+    
+    <pre>
+        
+
+let timerElement=document.getElementById("clock");
+ function timer(){
+    let times=new Date();
+    let hours =times.getHours();
+    let minutes=times.getMinutes();
+    let Second=times.getSeconds();
+    console.log(hours, minutes, Second);
+    timerElement.innerText=`${hours}:${minutes}:${Second}`
+
+}
+setInterval(timer,1000);
+
+
+    </pre>
+
+
+    <p>Q10. Create a select drop down for selecting Year 20-21, 21-22 etc. Print the item text selected</p>Ans
+    
+    <select name="year" id="years">
+        <option value="">20-21</option>
+        <option value="">21-22</option>
+    </select>
+    <span id="spanforselect"></span>
+
+<pre>
+    let years=document.getElementById("years");
+let spanforselect=document.getElementById("spanforselect")
+years.addEventListener("change",function(event){
+  spanforselect.innerText=`${event.target.selectedOptions[0].text}`;
+})
+
+</pre>
+
+
+
+
+
+
+    <script src="./style.js">
+    </script>
+</body>
+</html>

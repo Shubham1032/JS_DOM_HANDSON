@@ -1,0 +1,15 @@
+p{
+    font-weight: bolder;
+    font-size: larger;
+}
+#container{
+display: flex;
+flex-direction: row;
+}
+.flexbox{
+    width: 60px;
+    height: 60px;
+    background-color: tomato;
+    margin: 10px;
+   
+}
